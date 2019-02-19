@@ -4,7 +4,8 @@
   "description": "Projeto para armazenar caracteristicas de carro.",
   "main": "server.js",
   "scripts": {
-    "test": "teste"
+    "test": "teste",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/Danilodmbarra/studing-crud-js/issues"
   },
-  "homepage": "https://github.com/Danilodmbarra/studing-crud-js#readme"
+  "homepage": "https://github.com/Danilodmbarra/studing-crud-js#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
