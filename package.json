@@ -1,0 +1,19 @@
+{
+  "name": "cadastro_carro",
+  "version": "1.0.0",
+  "description": "Projeto para armazenar caracteristicas de carro.",
+  "main": "server.js",
+  "scripts": {
+    "test": "teste"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Danilodmbarra@github.com/Danilodmbarra/studing-crud-js.git"
+  },
+  "author": "Danilo Barra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Danilodmbarra/studing-crud-js/issues"
+  },
+  "homepage": "https://github.com/Danilodmbarra/studing-crud-js#readme"
+}
