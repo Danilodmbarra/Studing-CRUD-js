@@ -1,15 +1,13 @@
 
 //Chamada dos pacotes:
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-const mongoose = require('mongoose');
-const MongoClient = require('mongodb').MongoClient;
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+const MongoClient = require('mongodb').MongoClient
 const ObjectId = require('mongodb').ObjectId
 
-//config do Body-parser para usar json:
-app.use(bodyParser.urlencoded({ extended: true}));
-
+app.use(bodyParser.urlencoded({extended:true}))
+app.set('view engine','ejs')
 
 //Conexao com banco de dados e definindo porta:
 
@@ -22,19 +20,18 @@ MongoClient.connect(uri,(err,client) => {
     })
 });
 
-app.use(bodyParser.urlencoded({extended: true}))
-
 //
 
 app.get('/',(req,res) =>{
  res.render('index.ejs')
 })
-app.post('/show',(req,res) => {
+//salvando no banco de dados
+app.post('/show',(req,res)=>{
   db.collection('carro').save(req.body,(err,result)=>{
     if (err) return console.log(err)
     res.redirect('/show')
-      })
-})
+  })
+});
 app.get('/show',(req,res)=>{
   db.collection('carro').find().toArray((err,results)=>{
     res.render('show.ejs',{data : results})
@@ -78,3 +75,4 @@ app.route('/delete/:id')
     res.redirect('/show')
   })
 })
+module.exports = app;
